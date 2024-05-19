@@ -125,7 +125,6 @@
         <input type="checkbox" id="bombOption" checked><br><br>
         <button id="resetScoresButton">Resetar Melhores Tempos</button>
         <button id="fullscreenButton">Tela Cheia</button>
-        <button id="secreto">Secreto</button>
         <button id="closeOptions">Fechar</button>
     </div>
     <p id="score">Pontuação: 10</p>
@@ -343,7 +342,6 @@
         document.getElementById('bombOption').addEventListener('change', setBombOption);
         document.getElementById('resetScoresButton').addEventListener('click', resetScores);
         document.getElementById('fullscreenButton').addEventListener('click', fullscreen);
-        document.getElementById('secreto').addEventListener('click', secreto);
 
         // Função para alternar para o modo de tela cheia
         function fullscreen() {
@@ -352,14 +350,6 @@
             } else {
                 document.documentElement.requestFullscreen();
             }
-        }
-        function secreto(){
-            var link = document.createElement('a');
-            link.setAttribute('href', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ');
-            link.setAttribute('target', '_blank'); // Para abrir em uma nova aba
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
         }
     </script>
 </body>
