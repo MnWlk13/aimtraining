@@ -67,9 +67,9 @@
             font-size: 16px;
         }
         #score {
-            position: absolute;
-            top: 10px;
-            left: 10px;
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
             color: #FFF;
             font-size: 18px;
         }
@@ -177,7 +177,9 @@
                 for (let j = 0; j < gridHeight; j++) {
                     if (world[i][j] === 1) {
                         // Desenhar textura de madeira para blocos quebráveis
-                        ctx.drawImage(woodTexture, i * blockSize, j * blockSize, blockSize, blockSize);
+                        ctx
+
+.drawImage(woodTexture, i * blockSize, j * blockSize, blockSize, blockSize);
                     } else {
                         // Desenhar textura de grama para blocos vazios
                         ctx.drawImage(grassTexture, i * blockSize, j * blockSize, blockSize, blockSize);
@@ -186,9 +188,7 @@
             }
         }
 
-        function
-
- destroyBlock(x, y) {
+        function destroyBlock(x, y) {
             const blockX = Math.floor(x / blockSize);
             const blockY = Math.floor(y / blockSize);
             if (world[blockX] && world[blockX][blockY] === 1) {
@@ -325,7 +325,6 @@
         document.getElementById('bombOption').addEventListener('change', setBombOption);
         document.getElementById('resetScoresButton').addEventListener('click', resetScores);
         document.getElementById('fullscreenButton').addEventListener('click', fullscreen);
-        
 
         // Função para alternar para o modo de tela cheia
         function fullscreen() {
