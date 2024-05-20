@@ -11,13 +11,13 @@
 <body>
     <canvas id="gameCanvas" width="800" height="600"></canvas>
     <button id="optionsButton">Opções</button>
-    <div id="endScreen">
+    <div id="endScreen" style="display: none;">
         <!-- Conteúdo da tela de vitória aqui... -->
     </div>
-    <div id="loseScreen">
+    <div id="loseScreen" style="display: none;">
         <!-- Conteúdo da tela de derrota aqui... -->
     </div>
-    <div id="optionsScreen">
+    <div id="optionsScreen" style="display: none;">
         <!-- Conteúdo da tela de opções aqui... -->
     </div>
     <p id="score">Pontuação: 10</p>
@@ -119,7 +119,7 @@
             const finalTimeElement = document.getElementById('finalTime');
             const elapsedTime = (endTime - startTime) / 1000;
             finalTimeElement.textContent = elapsedTime.toFixed(2) + 's';
-            document.getElementById('restartButton').addEventListener('click', restartGame);
+            document.getElementById('restartButtonEnd').addEventListener('click', restartGame);
             // Adicionar a pontuação atual ao histórico
             scoreHistory.push({ score: score, time: elapsedTime.toFixed(2) });
             // Ordenar o histórico de pontuações pelos menores tempos
@@ -139,7 +139,7 @@
             const finalTimeElement = document.getElementById('finalTimeLose');
             const elapsedTime = (endTime - startTime) / 1000;
             finalTimeElement.textContent = elapsedTime.toFixed(2) + 's';
-            document.getElementById('restartButton').addEventListener('click', restartGame);
+            document.getElementById('restartButtonLose').addEventListener('click', restartGame);
             // Exibir o histórico de pontuações
             displayScoreHistory();
         }
@@ -150,7 +150,7 @@
 
         function toggleOptionsScreen() {
             const optionsScreen = document.getElementById('optionsScreen');
-            optionsScreen.style.display = optionsScreen.style.display === 'block' ? 'none' : 'block';
+            optionsScreen.style.display = optionsScreen.style.display === 'none' ? 'block' : 'none';
         }
 
         function closeOptions() {
