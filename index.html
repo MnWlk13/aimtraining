@@ -122,9 +122,12 @@
     <div id="optionsScreen">
         <h2>Opções</h2>
         <p>By: MnWlk13</p>
+        <a href="https://open.spotify.com/intl-pt/artist/4W0Coogax2CbvDCDbOJrUX"> Spotify</a>
+        <p></p>
+        <a href="https://www.youtube.com/@minewalkerXD"> Youtube</a>
+        <p></p>
         <button id="resetScoresButton">Resetar Melhores Tempos</button>
         <button id="fullscreenButton">Tela Cheia</button>
-        <button id="Minewalker">Ouvir Minewalker!</button>
         <button id="closeOptions">Fechar</button>
     </div>
     <p id="score">Pontuação: 10</p>
@@ -322,11 +325,7 @@
         document.getElementById('bombOption').addEventListener('change', setBombOption);
         document.getElementById('resetScoresButton').addEventListener('click', resetScores);
         document.getElementById('fullscreenButton').addEventListener('click', fullscreen);
-        document.getElementById('Minewalker').addEventListener('click', minewalker);
         
-        function minewalker() {
-            window.location.href = 'https://open.spotify.com/intl-pt/artist/4W0Coogax2CbvDCDbOJrUX';
-        }
 
         // Função para alternar para o modo de tela cheia
         function fullscreen() {
