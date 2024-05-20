@@ -121,9 +121,10 @@
     </div>
     <div id="optionsScreen">
         <h2>Opções</h2>
-        <p for="bombOption">By: minewalker</p>
+        <p>By: MnWlk13</p>
         <button id="resetScoresButton">Resetar Melhores Tempos</button>
         <button id="fullscreenButton">Tela Cheia</button>
+        <button id="Minewalker">Ouvir Minewalker!</button>
         <button id="closeOptions">Fechar</button>
     </div>
     <p id="score">Pontuação: 10</p>
@@ -182,7 +183,9 @@
             }
         }
 
-        function destroyBlock(x, y) {
+        function
+
+ destroyBlock(x, y) {
             const blockX = Math.floor(x / blockSize);
             const blockY = Math.floor(y / blockSize);
             if (world[blockX] && world[blockX][blockY] === 1) {
@@ -319,6 +322,11 @@
         document.getElementById('bombOption').addEventListener('change', setBombOption);
         document.getElementById('resetScoresButton').addEventListener('click', resetScores);
         document.getElementById('fullscreenButton').addEventListener('click', fullscreen);
+        document.getElementById('Minewalker').addEventListener('click', minewalker);
+        
+        function minewalker() {
+            window.location.href = 'https://open.spotify.com/intl-pt/artist/4W0Coogax2CbvDCDbOJrUX';
+        }
 
         // Função para alternar para o modo de tela cheia
         function fullscreen() {
