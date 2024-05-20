@@ -67,10 +67,17 @@
             font-size: 16px;
         }
         #score {
-            position: fixed;
+            position: absolute;
+            bottom:600px;
+            right: 430px;
+            color: #000000;
+            font-size: 18px;
+        }
+        #credito {
+            position: absolute;
             bottom: 10px;
             right: 10px;
-            color: #FFF;
+            color: #000000;
             font-size: 18px;
         }
         #timer {
@@ -78,7 +85,7 @@
             position: absolute;
             top: 40px;
             right: 10px;
-            color: #FFF;
+            color: #000000;
             font-size: 18px;
         }
         #optionsButton {
@@ -131,6 +138,7 @@
         <button id="closeOptions">Fechar</button>
     </div>
     <p id="score">Pontuação: 10</p>
+    <p id="credito">By: MnWlk13</p>
     <p id="timer" style="display: none;">Tempo: 0s</p>
     <script>
         const canvas = document.getElementById('gameCanvas');
