@@ -121,8 +121,8 @@
     </div>
     <div id="optionsScreen">
         <h2>Opções</h2>
-        <label for="bombOption">Ativar Bombas:</label>
-        <input type="checkbox" id="bombOption" checked><br><br>
+        //<label for="bombOption">Ativar Bombas:</label>
+        //<input type="checkbox" id="bombOption" checked><br><br>
         <button id="resetScoresButton">Resetar Melhores Tempos</button>
         <button id="fullscreenButton">Tela Cheia</button>
         <button id="closeOptions">Fechar</button>
@@ -152,8 +152,8 @@
         woodTexture.src = 'images2.jpeg';
         const grassTexture = new Image();
         grassTexture.src = 'images3.jpeg';
-        const bombTexture = new Image();
-        bombTexture.src = 'images4.jpeg';
+        //const bombTexture = new Image();
+       // bombTexture.src = 'images4.jpeg';
 
         function generateWorld() {
             breakableBlocksRemaining = 0;
@@ -170,12 +170,12 @@
                 }
             }
 
-            if (document.getElementById('bombOption').checked) {
-                for (let i = 0; i < gridWidth; i++) {
-                    for (let j = 0; j < gridHeight; j++) {
-                        const random = Math.random();
-                        if (random < 0.1) {
-                            world[i][j] = 2; // 2 represents a bomb block
+            //if (document.getElementById('bombOption').checked) {
+              //  for (let i = 0; i < gridWidth; i++) {
+                //    for (let j = 0; j < gridHeight; j++) {
+                  //      const random = Math.random();
+                    //    if (random < 0.1) {
+                      //      world[i][j] = 2; // 2 represents a bomb block
                         }
                     }
                 }
@@ -190,7 +190,7 @@
                         ctx.drawImage(woodTexture, i * blockSize, j * blockSize, blockSize, blockSize);
                     } else if (world[i][j] === 2) {
                         // Desenhar textura de bomba para blocos de bomba
-                        ctx.drawImage(bombTexture, i * blockSize, j * blockSize, blockSize, blockSize);
+                    //    ctx.drawImage(bombTexture, i * blockSize, j * blockSize, blockSize, blockSize);
                     } else {
                         // Desenhar textura de grama para blocos vazios ou blocos de bomba se a opção das bombas estiver desativada
                         ctx.drawImage(grassTexture, i * blockSize, j * blockSize, blockSize, blockSize);
@@ -218,7 +218,7 @@
                     }
                 } else if (world[blockX][blockY] === 2) {
                     world[blockX][blockY] = 0;
-                    score -= 100; // Decrease score by 100 when a bomb block is destroyed
+                    //score -= 100; // Decrease score by 100 when a bomb block is destroyed
                     updateScore();
                 }
                 updateScore();
@@ -285,9 +285,9 @@
             optionsScreen.style.display = 'none';
         }
 
-        function setBombOption() {
-            generateWorld(); // Regenerate world when bomb option changes
-            closeOptions();
+        //function setBombOption() {
+        //    generateWorld(); // Regenerate world when bomb option changes
+         //   closeOptions();
         }
 
         function resetScores() {
@@ -339,7 +339,7 @@
 
         document.getElementById('optionsButton').addEventListener('click', toggleOptionsScreen);
         document.getElementById('closeOptions').addEventListener('click', closeOptions);
-        document.getElementById('bombOption').addEventListener('change', setBombOption);
+        //document.getElementById('bombOption').addEventListener('change', setBombOption);
         document.getElementById('resetScoresButton').addEventListener('click', resetScores);
         document.getElementById('fullscreenButton').addEventListener('click', fullscreen);
 
